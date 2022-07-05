@@ -1,0 +1,5 @@
+.sc-bar { background-color: #333333; }
+.sc-icon { background-color: #eeeeee; }
+.sc-icon { background-image: url("./img/default.png"); }
+.sc-content button { background-color: #eeeeee; }
+.sc-content button:hover { background-color: #dddddd; }

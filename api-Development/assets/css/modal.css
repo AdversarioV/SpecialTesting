@@ -1,0 +1,320 @@
+
+.sc-no-scroll /* Used to remove background scroll effect. */
+{
+	overflow:hidden !important;
+}
+
+.sc-wrapper
+{
+	position:fixed;
+	display:block;
+	width:100%;
+	height:100%;
+    top:0;
+    left:0;
+    box-sizing:border-box;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    -webkit-animation:.4s forwards sc-modal-pop;
+    animation:0.4s forwards sc-modal-pop;
+    will-change:opacity;
+    -webkit-print-color-adjust:exact;
+    background:radial-gradient(50% 50% at 50% 50%,rgba(255,255,255,.45) 0,rgba(255,255,255,.72) 100%);
+    z-index:2147483646; /* Highest possible value! */
+}
+
+.sc-wrapper.hidden
+{
+	display:none;
+}
+
+.sc-modal
+{
+	box-sizing:border-box;
+	position:fixed;
+	display:block;
+	width:350px;
+	height:auto;
+	max-height:90vh;
+	top:calc((100vh - 550px) * 0.4);
+	left:calc((100vw - 350px) * 0.5);
+	color:#222222;
+	font-family:/*"Nunito Sans",*/ sans-serif;
+	font-size:14px;
+	font-weight:400;
+	text-align:center;
+	line-height:24px;
+	background:#ffffff;
+	border-radius:16px;
+	/*box-shadow:0 0 30px rgb(0 0 0 / 30%);*/
+	box-shadow:0 0 20px rgba(0,0,0,0.1);
+	transition:all 0.4s ease-in-out;
+	opacity:1;
+	overflow:hidden;
+	z-index:2147483647; /* Highest possible value! */
+}
+
+.sc-bar
+{
+	height:70px;
+	margin:-3px 0 0 0;
+	background:#333333;
+	border:1px solid #ebebeb;
+	border-radius:16px 16px 0 0;
+}
+
+.sc-bar svg
+{
+	cursor:pointer;
+	position:absolute;
+	display:inline-block;
+	color:#ffffff;
+	top:28px;
+	right:25px;
+	font-weight:700;
+	text-decoration:none;
+}
+
+.sc-icon
+{
+	position:relative;
+	width:100px;
+	height:100px;
+	top:24px;
+	background:#eeeeee;
+	background-image:url("../img/default.png");
+	background-repeat:no-repeat;
+	background-size:contain;
+	margin:0 auto 60px auto;
+	border:2px solid #f2f3f5;
+	border-radius:50%;
+}
+
+.sc-icon:after
+{
+	content:'';
+	position:absolute;
+	display:block;
+	width:142px;
+	height:24px;
+	left:-21px;
+	background-image:url("../img/shadow.png");
+	background-repeat:no-repeat;
+	background-size:100%;
+	margin:84px 0 0 0;
+	background-position:0px 0px;
+	z-index:-1;
+}
+
+.sc-content
+{
+	max-height:calc(90vh - 70px - 46px);
+	padding:80px 30px 20px 30px;
+	border:1px solid #ebebeb;
+	overflow:auto;
+}
+
+.sc-content h3
+{
+	display:block;
+	font-size:20px;
+	font-weight:700;
+	line-height:140%;
+	margin:0 0 20px 0;
+}
+
+.sc-content p
+{
+	margin:0 0 20px 0;
+}
+
+.sc-content p.small
+{
+	font-size:13px;
+	line-height:20px;
+}
+
+.sc-content strong
+{
+	color:#000000;
+	font-weight:700;
+}
+
+.sc-content input
+{
+	box-sizing:border-box;
+	display:block;
+	width:calc(100% - 20px);
+	color:#222222;
+	font-family:sans-serif;
+	font-size:14px;
+	font-weight:400;
+	line-height:14px;
+	text-align:center;
+	padding:16px;
+	margin:0 auto 10px auto;
+	border:1px solid #dddddd;
+	border-radius:0;
+}
+
+.sc-content select
+{
+	box-sizing:border-box;
+	display:block;
+	width:calc(100% - 20px);
+	color:#222222;
+	font-family:sans-serif;
+	font-size:14px;
+	font-weight:400;
+	line-height:14px;
+	text-align:left;
+	background-color:#ffffff;
+	padding:8px;
+	margin:0 auto 10px auto;
+	border:1px solid #dddddd;
+	border-radius:0;
+}
+
+.sc-content input[type="checkbox"]
+{
+	float:left;
+	width:auto;
+	transform:scale(1.5);
+	margin:5px 5px 0 5px;
+}
+
+.sc-content button
+{
+	cursor:pointer;
+	display:block;
+	width:calc(100% - 20px);
+	color:#111111;
+	font-family:sans-serif;
+	font-size:16px;
+	font-weight:700;
+	line-height:16px;
+	text-align:center;
+	padding:18px 0;
+	margin:0 auto 5px auto;
+	background-color:#eeeeee;
+	background-size:24px;
+	background-repeat:no-repeat;
+	border:0;
+	border-radius:32px;
+	box-shadow:0 0 10px rgba(0,0,0,0.22);
+}
+
+.sc-content button em
+{
+	display:block;
+	font-size:14px;
+	font-weight:400;
+	font-style:italic;
+	margin:4px 0 0 0;
+}
+
+.sc-content button.margin
+{
+	margin:0 0 20px 0;
+}
+
+.sc-content button[disabled],
+.sc-content button[disabled]:hover
+{
+	cursor:not-allowed;
+	background-color:#dddddd;
+	box-shadow:none;
+}
+
+.sc-content button:hover
+{
+	background-color:#dddddd;
+}
+
+.sc-content button.stripe
+{
+	text-align:left;
+	padding:18px 0 18px 64px;
+	background-image:url('../img/credit-card.svg'), url('../img/arrow.svg');
+	background-position:left 24px center, right 24px center;
+	background-size:25px 20px, 20px 16px;
+	padding-left:64px;
+}
+
+.sc-content button.coinbase
+{
+	text-align:left;
+	padding:18px 0 18px 64px;
+	background-image:url('../img/crypto.png'), url('../img/arrow.svg');
+	background-position:left 27px center, right 24px center;
+	background-size:24px 24px, 20px 16px;
+	padding-left:64px;
+}
+
+.sc-content button.ethereum
+{
+	text-align:left;
+	padding:18px 0 18px 64px;
+	background-image:url('../img/ethereum.png'), url('../img/arrow.svg');
+	background-position:left 30px center, right 24px center;
+	background-size:14px 22px, 20px 16px;
+	padding-left:64px;
+}
+
+.sc-content button.bank
+{
+	text-align:left;
+	padding:18px 0 18px 64px;
+	background-image:url('../img/bank.png'), url('../img/arrow.svg');
+	background-position:left 24px center, right 24px center;
+	background-size:24px 24px, 20px 16px;
+	padding-left:64px;
+}
+
+.sc-footer
+{
+	color:#848586;
+	font-size:10px;
+	background:#f2f3f5;
+	padding:10px;
+	border:1px solid #ebebeb;
+	border-radius:0 0 16px 16px;
+}
+
+.sc-footer a
+{
+	color:#848586;
+}
+
+.sc-loader
+{
+  border:8px solid #f3f3f3;
+  border-top:8px solid #3498db;
+  border-radius:50%;
+  width:80px;
+  height:80px;
+  animation:sc-modal-load 2s linear infinite;
+  margin:30px auto 20px auto;
+}
+
+@media only screen and (max-width: 768px)
+{
+	.sc-modal
+	{
+		top:5vh;
+	}
+}
+
+@keyframes sc-modal-pop
+{
+	0% { transform: scale(0.5); }
+	50% { transform: scale(1.2); }
+	100% { transform: scale(1); }
+}
+
+@keyframes sc-modal-load
+{
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
